@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>STOPWATCH</title>
+    <style>
+
+      body{
+        background-color: rgb(11, 14, 17);
+        color: white;
+        font-family: Arial;
+      }
+
+      .time{
+        font-size: 100px;
+        align: center;
+        background-color: transparent;
+        border-color: blue;
+        border-radius: 150px;
+        height: 300px;
+        width: 300px;
+        color: blue;
+      }
+
+      .timewatch{
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+        margin-left: 530px;
+        margin-top: 100px;
+       
+
+      }
+
+      .controls{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 50px;
+      }
+
+      .button{
+        background-color: transparent;
+        color: white;
+        border-color: blue;
+        height: 100px;
+        width: 150px;
+        font-size: 40px;
+        border-radius: 10px;
+      }
+
+    
+
+
+    </style>
+
+    <body>
+ <div class="timewatch">
+  <button class="js-time time"> 00 </button>
+    
+</div>
+
+<div class="controls">
+   <button onclick="start();
+  " class="button"> Start </button>
+
+  <button onclick="reset();
+  " class="button"> Reset </button>
+
+  <button onclick="pause();
+  " class="button">Pause</button>
+
+</div>
+
+ 
+     
+
+    </body>
+    
+    
+
+   
+
+    <script>
+
+      let time = 0;
+
+      function start() {
+        t = setInterval( function() {
+          time = time+1
+          document.querySelector('.js-time').innerHTML = `${time} `
+        } , 1000);
+      }
+
+      function reset() {
+        clearInterval(t);
+        time = 0;
+        document.querySelector('.js-time').innerHTML = '00';
+      }
+
+      function pause() {
+         clearInterval(t);
+
+      }
+      
+
+
+
+
+
+      
+    </script>
+  </body>
+</html>
